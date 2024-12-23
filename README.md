@@ -1,27 +1,65 @@
-# UserManagement
+# User Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Description
 
-## Development server
+This is a User Management System built using Angular with role-based access control. The system supports user registration, login, and protected routes for admin and regular users. The project uses an AuthGuard to manage access to different routes based on user roles.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- User Registration
+- User Login
+- Role-based Access Control (Admin vs UserSimple)
+- Protected Admin Dashboard
+- User Profile
+- Responsive Design
+- JSON Server for Simulated Backend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- TypeScript
+- HTML
+- CSS
+- AuthGuard for Role-Based Access Control
+- JSON Server for Simulated Backend (User Authentication)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone the repository:
+   
+git clone https://github.com/Nada-bkh/user-management.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate to the project directory:
 
-## Running end-to-end tests
+cd user-management
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install dependencies:
 
-## Further help
+npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Run the JSON server (for simulating the backend):
+
+npm run json-server
+
+5. Start the Angular development server:
+
+ng serve
+
+6. Usage:
+
+Register: Navigate to /register to create a new user.
+
+Login: Navigate to /login to log in with existing credentials.
+
+Admin Dashboard: Accessible at /admin (protected with AuthGuard for admin role).
+
+User Profile: Accessible at /profile (protected with AuthGuard for userSimple role).
+
+### Contributing
+Contributions are welcome! Please feel free to fork the repository and submit a pull request with your changes. Ensure to follow the coding guidelines and maintain existing project structure.
+
+### License
+This project is licensed under the MIT License.
+
+### Author
+Nada Ben Khalifa
