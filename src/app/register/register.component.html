@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Inscription</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email">Email</label>
+      <input id="email" class="form-control" type="email" formControlName="email" />
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        <small class="text-danger">Email invalide.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password">Mot de passe</label>
+      <input id="password" class="form-control" type="password" formControlName="password" />
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        <small class="text-danger">Mot de passe (min 6 caractères).</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+      S'inscrire
+    </button>
+  </form>
+</div>

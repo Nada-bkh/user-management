@@ -1,0 +1,26 @@
+<div class="signup-container">
+  <h2>Inscription</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        <small *ngIf="signupForm.get('email')?.errors?.['required']">L'email est requis.</small>
+        <small *ngIf="signupForm.get('email')?.errors?.['email']">Format d'email invalide.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" formControlName="password" />
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        <small *ngIf="signupForm.get('password')?.errors?.['required']">Le mot de passe est requis.</small>
+        <small *ngIf="signupForm.get('password')?.errors?.['minlength']">
+          Le mot de passe doit contenir au moins 6 caractères.
+        </small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">S'inscrire</button>
+  </form>
+</div>

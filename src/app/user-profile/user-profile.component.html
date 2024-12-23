@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2>Profil Utilisateur</h2>
+  <div *ngIf="user">
+    <p><strong>Email :</strong> {{ user.email }}</p>
+    <p><strong>Rôle :</strong> {{ user.role }}</p>
+  </div>
+  <button class="btn btn-danger" (click)="logout()">Déconnexion</button>
+</div>
